@@ -1,5 +1,8 @@
+@import "https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma-rtl.min.css";
+
 * {
   box-sizing: border-box;
+  border: 1px solid grey;
 }
 
 body,
@@ -10,16 +13,71 @@ html {
   margin: 0;
   font-family: sans-serif;
   color: #333;
+  transition: background-color 1s;
 }
 
-.dark-mode {
+body[light-mode="dark"] {
+  background-color: #141516;
+  color: #ced4e2;
+}
+body[light-mode="dark"] .light-mode-button span:nth-child(1) {
+  background-color: #ced4e2;
+  color: #141516;
+}
+body[light-mode="dark"] .light-mode-button span:nth-child(2) {
+  left: 40px;
+  background-color: #141516;
+}
+
+.light-mode-button {
+  background: 0;
+  box-sizing: border-box;
+  cursor: pointer;
+  height: 20px;
+  width: 0px;
+  position: relative;
+  border: 1px solid rgba(255, 255, 255, 0);
+  text-decoration: none;
+}
+
+.light-mode-button:focus {
+  outline: none; /* Not ideal for accessibility */
+  text-decoration: none;
+}
+
+.light-mode-button span:nth-child(1) {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 60px;
+  height: 20px;
+  border-radius: 20px;
+  background-color: #d6d7db;
+  box-shadow: inset 1px 1px 3px 0 rgb(0 0 0 / 40%);
+  transition: 0.3s;
+  text-decoration: none;
+}
+
+.light-mode-button span:nth-child(2) {
+  position: absolute;
+  top: 2px;
+  left: 3px;
+  width: 15px;
+  height: 15px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 50%;
+  box-shadow: 2px 2px 2px 0 rgb(0 0 0 / 40%);
+  transition: 0.3s;
+}
+
+/* .dark-mode {
   background-color: black;
   color: white;
   height: 100%;
   padding: 0;
   margin: 0;
   font-family: sans-serif;
-}
+} */
 
 a {
   text-decoration: none;
@@ -186,7 +244,13 @@ footer {
   border-top: 1px solid #ccc;
   display: flex;
   justify-content: center;
-  padding: 1%;
   font-size: 110%;
-  align-items: center;
+}
+
+footer div {
+  /* margin: 0 auto 0 auto;
+  display: flex;
+  justify-content: center; */
+  padding: 10px;
+  width: 100%;
 }

@@ -8,30 +8,52 @@
   </head>
 
   <body>
+    <script>
+      var app = document.getElementsByTagName("BODY")[0]; if
+      (localStorage.lightMode == "dark") { app.setAttribute("light-mode",
+      "dark"); }
+    </script>
     <div class="wrapper">
       <header>
         <h1>
           <a href="/">Just Tech News</a>
         </h1>
-
+        <nav>
+          <button id="logout" class="btn-no-style">logout</button>
+          <a href="/login">login</a>
+        </nav>
       </header>
       <main>
 
         {{{body}}}
       </main>
       <footer>
-        <p>
-          Thanks for visiting!
+        <div class="columns">
+          <div class="column is-6 has-text-centered">
+            Thanks for visiting!
+          </div>
+          <div class="column is-6 has-text-centered">
+            Dark Mode<button
+              class="light-mode-button"
+              aria-label="Toggle Light Mode"
+              onclick="toggle_light_mode()"
+            >
+              <span></span>
+              <span></span>
+            </button>
 
-          <button onclick="myFunction()">Toggle dark mode</button>
-
-          <script>
-            function myFunction() { var element = document.body;
-            element.classList.toggle("dark-mode"); }
-          </script></p>
+            <script>
+              function toggle_light_mode() { var app =
+              document.getElementsByTagName("BODY")[0]; if
+              (localStorage.lightMode == "dark") { localStorage.lightMode =
+              "light"; app.setAttribute("light-mode", "light"); } else {
+              localStorage.lightMode = "dark"; app.setAttribute("light-mode",
+              "dark"); } }
+            </script>
+          </div></div>
       </footer>
     </div>
-
+    <script src="/javascript/logout.js"></script>
   </body>
 
 </html>

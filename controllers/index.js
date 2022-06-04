@@ -5,6 +5,10 @@ const homeRoutes = require("./home-routes.js");
 
 router.use("/", homeRoutes);
 
+router.get("/login", (req, res) => {
+  res.render("login");
+});
+
 router.use("/api", apiRoutes);
 
 router.use((req, res) => {
