@@ -13,12 +13,22 @@
         <h1>
           <a href="/">Just Tech News</a>
         </h1>
+
       </header>
       <main>
+
         {{{body}}}
       </main>
       <footer>
-        Thanks for visiting!
+        <p>
+          Thanks for visiting!
+
+          <button onclick="myFunction()">Toggle dark mode</button>
+
+          <script>
+            function myFunction() { var element = document.body;
+            element.classList.toggle("dark-mode"); }
+          </script></p>
       </footer>
     </div>
 
